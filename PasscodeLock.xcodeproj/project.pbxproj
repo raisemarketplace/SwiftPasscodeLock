@@ -198,8 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				C99EAF411B90B05700D61E1B /* PasscodeLock */,
-				C99EAF4D1B90B05800D61E1B /* PasscodeLockTests */,
 				C9D3DF111B91AD11008561EB /* PasscodeLockDemo */,
+				C99EAF4D1B90B05800D61E1B /* PasscodeLockTests */,
 				C9D3DF261B91AD12008561EB /* PasscodeLockDemoTests */,
 				C9D3DF311B91AD12008561EB /* PasscodeLockDemoUITests */,
 				C99EAF401B90B05700D61E1B /* Products */,
@@ -224,13 +224,13 @@
 				C9DC07D21B90B1CE007A4DD0 /* Protocols */,
 				C9DC07D11B90B1CE007A4DD0 /* PasscodeLock */,
 				C9DC07D31B90B1CE007A4DD0 /* Views */,
-				C9DC07E61B90C382007A4DD0 /* LocalAuthentication.framework */,
-				C99EAF421B90B05700D61E1B /* PasscodeLock.h */,
-				C99EAF441B90B05700D61E1B /* Info.plist */,
 				C9DC07F71B90CF29007A4DD0 /* Functions.swift */,
 				C9DC07FA1B90D0A3007A4DD0 /* PasscodeLock.strings */,
 				C9DC08151B90DF4E007A4DD0 /* PasscodeLockViewController.swift */,
 				C9D3DF471B91F099008561EB /* PasscodeLockPresenter.swift */,
+				C99EAF421B90B05700D61E1B /* PasscodeLock.h */,
+				C99EAF441B90B05700D61E1B /* Info.plist */,
+				C9DC07E61B90C382007A4DD0 /* LocalAuthentication.framework */,
 			);
 			path = PasscodeLock;
 			sourceTree = "<group>";
@@ -253,8 +253,8 @@
 				C9D3DF141B91AD11008561EB /* PasscodeSettingsViewController.swift */,
 				C9D3DF451B91BD0E008561EB /* PasscodeLockConfiguration.swift */,
 				C9D3DF431B91B9CD008561EB /* UserDefaultsPasscodeRepository.swift */,
-				C9D3DF161B91AD11008561EB /* Main.storyboard */,
 				C9D3DF191B91AD11008561EB /* Assets.xcassets */,
+				C9D3DF161B91AD11008561EB /* Main.storyboard */,
 				C9D3DF1B1B91AD11008561EB /* LaunchScreen.storyboard */,
 				C9D3DF1E1B91AD11008561EB /* Info.plist */,
 			);

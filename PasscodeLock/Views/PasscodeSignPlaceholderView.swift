@@ -50,14 +50,14 @@ open class PasscodeSignPlaceholderView: UIView {
         super.init(coder: aDecoder)
     }
     
-    open override var intrinsicContentSize : CGSize {
+    @IBInspectable open override var intrinsicContentSize : CGSize {
         
-        return CGSize(width: 16, height: 16)
+        return CGSize(width: 12, height: 12)
     }
     
     fileprivate func setupView() {
         
-        layer.cornerRadius = 8
+        layer.cornerRadius = 6
         layer.borderWidth = 1
         layer.borderColor = activeColor.cgColor
         backgroundColor = inactiveColor

@@ -251,12 +251,12 @@
 			children = (
 				C9D3DF121B91AD11008561EB /* AppDelegate.swift */,
 				C9D3DF141B91AD11008561EB /* PasscodeSettingsViewController.swift */,
+				C9D3DF451B91BD0E008561EB /* PasscodeLockConfiguration.swift */,
+				C9D3DF431B91B9CD008561EB /* UserDefaultsPasscodeRepository.swift */,
 				C9D3DF161B91AD11008561EB /* Main.storyboard */,
 				C9D3DF191B91AD11008561EB /* Assets.xcassets */,
 				C9D3DF1B1B91AD11008561EB /* LaunchScreen.storyboard */,
 				C9D3DF1E1B91AD11008561EB /* Info.plist */,
-				C9D3DF431B91B9CD008561EB /* UserDefaultsPasscodeRepository.swift */,
-				C9D3DF451B91BD0E008561EB /* PasscodeLockConfiguration.swift */,
 			);
 			path = PasscodeLockDemo;
 			sourceTree = "<group>";

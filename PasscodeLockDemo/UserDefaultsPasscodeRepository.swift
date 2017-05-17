@@ -27,12 +27,12 @@ class UserDefaultsPasscodeRepository: PasscodeRepositoryType {
         return false
     }
     
-    var passcode: [String]? {
+    var passcode: [Int]? {
         
-        return defaults.value(forKey: passcodeKey) as? [String] ?? nil
+        return defaults.value(forKey: passcodeKey) as? [Int] ?? nil
     }
     
-    func savePasscode(_ passcode: [String]) {
+    func savePasscode(_ passcode: [Int]) {
         
         defaults.set(passcode, forKey: passcodeKey)
         defaults.synchronize()

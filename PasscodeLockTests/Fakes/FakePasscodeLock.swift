@@ -25,7 +25,7 @@ class FakePasscodeLock: PasscodeLockType {
         self.configuration = configuration
     }
     
-    func addSign(_ sign: String) {
+    func addSign(_ sign: Int) {
         
     }
     

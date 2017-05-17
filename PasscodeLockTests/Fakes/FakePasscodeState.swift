@@ -16,12 +16,12 @@ class FakePasscodeState: PasscodeLockStateType {
     var isTouchIDAllowed = true
     
     var acceptPaccodeCalled = false
-    var acceptedPasscode = [String]()
+    var acceptedPasscode = [Int]()
     var numberOfAcceptedPasscodes = 0
     
     init() {}
     
-    func accept(passcode: [String], fromLock lock: PasscodeLockType) {
+    func accept(passcode: [Int], fromLock lock: PasscodeLockType) {
         
         acceptedPasscode = passcode
         acceptPaccodeCalled = true

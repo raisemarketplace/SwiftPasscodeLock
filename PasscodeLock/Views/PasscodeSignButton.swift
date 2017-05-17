@@ -12,7 +12,7 @@ import UIKit
 open class PasscodeSignButton: UIButton {
     
     @IBInspectable
-    open var passcodeSign: String = "1"
+    open var passcodeSign: Int = 1
     
     @IBInspectable
     open var borderColor: UIColor = UIColor.white {

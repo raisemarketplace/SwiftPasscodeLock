@@ -16,7 +16,7 @@ public protocol PasscodeLockType {
     var state: PasscodeLockStateType {get}
     var isTouchIDAllowed: Bool {get}
     
-    func addSign(_ sign: String)
+    func addSign(_ sign: Int)
     func removeSign()
     func changeStateTo(_ state: PasscodeLockStateType)
     func authenticateWithBiometrics()

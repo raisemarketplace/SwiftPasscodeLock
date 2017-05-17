@@ -27,7 +27,7 @@ open class PasscodeLock: PasscodeLockType {
     }
     
     fileprivate var lockState: PasscodeLockStateType
-    fileprivate lazy var passcode = [String]()
+    fileprivate lazy var passcode = [Int]()
     
     public init(state: PasscodeLockStateType, configuration: PasscodeLockConfigurationType) {
         
@@ -37,7 +37,7 @@ open class PasscodeLock: PasscodeLockType {
         self.configuration = configuration
     }
     
-    open func addSign(_ sign: String) {
+    open func addSign(_ sign: Int) {
         
         passcode.append(sign)
         delegate?.passcodeLock(self, addedSignAtIndex: passcode.count - 1)

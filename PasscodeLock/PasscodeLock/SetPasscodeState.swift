@@ -27,7 +27,7 @@ struct SetPasscodeState: PasscodeLockStateType {
         description = localizedStringFor("PasscodeLockSetDescription", comment: "Set passcode description")
     }
     
-    func accept(passcode: [String], fromLock lock: PasscodeLockType) {
+    func accept(passcode: [Int], fromLock lock: PasscodeLockType) {
         
         let nextState = ConfirmPasscodeState(passcode: passcode)
         

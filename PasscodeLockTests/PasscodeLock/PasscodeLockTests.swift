@@ -61,12 +61,12 @@ class PasscodeLockTests: XCTestCase {
         let delegate = MockDelegate()
         
         passcodeLock.delegate = delegate
-        passcodeLock.addSign("1")
+        passcodeLock.addSign(1)
         
         XCTAssertEqual(delegate.called, true, "Should inform the delegate for added sign at index")
         XCTAssertEqual(delegate.signIndex, 0, "Should return the added sign index")
         
-        passcodeLock.addSign("2")
+        passcodeLock.addSign(2)
         
         XCTAssertEqual(delegate.signIndex, 1, "Should return the added sign index")
     }
@@ -88,8 +88,8 @@ class PasscodeLockTests: XCTestCase {
         let delegate = MockDelegate()
         
         passcodeLock.delegate = delegate
-        passcodeLock.addSign("1")
-        passcodeLock.addSign("2")
+        passcodeLock.addSign(1)
+        passcodeLock.addSign(2)
         
         passcodeLock.removeSign()
         
@@ -102,7 +102,7 @@ class PasscodeLockTests: XCTestCase {
     
     func testCallStateToAcceptTheEnteredPasscode() {
         
-        let passcode = ["0", "1", "2", "3"]
+        let passcode = [0, 1, 2, 3]
         
         for sign in passcode {
             
@@ -116,8 +116,8 @@ class PasscodeLockTests: XCTestCase {
     
     func testResetSigns() {
         
-        let passcodeOne = ["0", "1", "2", "3"]
-        let passcodeTwo = ["9", "8", "7", "6"]
+        let passcodeOne = [0, 1, 2, 3]
+        let passcodeTwo = [9, 8, 7, 6]
         
         for sign in passcodeOne {
             

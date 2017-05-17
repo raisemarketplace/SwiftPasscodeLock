@@ -13,7 +13,7 @@ class FakePasscodeRepository: PasscodeRepositoryType {
     var hasPasscode: Bool { return true }
     var passcode: [Int]? { return fakePasscode }
     
-    var fakePasscode = ["1", "2", "3", "4"]
+    var fakePasscode = [1, 2, 3, 4]
     
     var savePasscodeCalled = false
     var savedPasscode = [Int]()

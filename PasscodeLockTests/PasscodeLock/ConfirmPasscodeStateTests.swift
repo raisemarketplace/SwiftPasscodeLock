@@ -10,7 +10,7 @@ import XCTest
 
 class ConfirmPasscodeStateTests: XCTestCase {
     
-    let passcodeToConfirm = ["0", "0", "0", "0"]
+    let passcodeToConfirm = [0, 0, 0, 0]
     var passcodeLock: FakePasscodeLock!
     var passcodeState: ConfirmPasscodeState!
     var repository: FakePasscodeRepository!
@@ -75,7 +75,7 @@ class ConfirmPasscodeStateTests: XCTestCase {
         let delegate = MockDelegate()
         
         passcodeLock.delegate = delegate
-        passcodeState.accept(passcode: ["1", "2"], fromLock: passcodeLock)
+        passcodeState.accept(passcode: [1, 2], fromLock: passcodeLock)
         
         XCTAssertEqual(passcodeLock.changeStateCalled, true, "Should change the state")
         XCTAssert(passcodeLock.state is SetPasscodeState, "Should change the state to SetPasscodeState")

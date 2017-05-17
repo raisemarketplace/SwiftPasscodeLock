@@ -61,7 +61,7 @@ class ChangePasscodeStateTests: XCTestCase {
         let delegate = MockDelegate()
         
         passcodeLock.delegate = delegate
-        passcodeState.accept(passcode: ["0", "0", "0", "0"], fromLock: passcodeLock)
+        passcodeState.accept(passcode: [0, 0, 0, 0], fromLock: passcodeLock)
         
         XCTAssertEqual(delegate.called, true, "Should call the delegate when the passcode is incorrect")
     }

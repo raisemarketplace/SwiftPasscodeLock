@@ -11,6 +11,7 @@ import UIKit
 open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegate {
     
     public enum LockState {
+        case getPasscode
         case enterPasscode
         case setPasscode
         case changePasscode
@@ -19,6 +20,7 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
         func getState() -> PasscodeLockStateType {
             
             switch self {
+            case .getPasscode: return GetPasscodeState()
             case .enterPasscode: return EnterPasscodeState()
             case .setPasscode: return SetPasscodeState()
             case .changePasscode: return ChangePasscodeState()
@@ -43,6 +45,7 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
     @IBOutlet open weak var hSpace1And2: NSLayoutConstraint!
     @IBOutlet open weak var hSpace2And3: NSLayoutConstraint!
     
+    open var getPasscodeBlock: ((_ passcode: [Int]) -> Void)?
     open var successCallback: ((_ lock: PasscodeLockType) -> Void)?
     open var dismissCompletionCallback: (()->Void)?
     open var animateOnDismiss: Bool
@@ -275,5 +278,10 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
         if index == 0 {
             deleteCancelButton?.setTitle("Cancel", for: .normal)
         }
+    }
+    
+    open func passcodeEntered(_ passcode: [Int]) {
+        
+        getPasscodeBlock?(passcode)
     }
 }

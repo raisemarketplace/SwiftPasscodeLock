@@ -13,7 +13,7 @@ struct GetPasscodeState: PasscodeLockStateType {
     let title: String
     let description: String
     let isCancellableAction = true
-    var isTouchIDAllowed = true
+    var isTouchIDAllowed = false
     
     fileprivate var inccorectPasscodeAttempts = 0
     fileprivate var isNotificationSent = false

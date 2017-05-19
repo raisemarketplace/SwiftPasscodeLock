@@ -25,6 +25,7 @@ open class PasscodeLockPresenter {
     fileprivate let passcodeConfiguration: PasscodeLockConfigurationType
     open var isPasscodePresented = false
     open let passcodeLockVC: PasscodeLockViewController
+    open var successCallback: ((_ lock: PasscodeLockType) -> Void)?
     
     public init(mainWindow window: UIWindow?, configuration: PasscodeLockConfigurationType, viewController: PasscodeLockViewController) {
         
@@ -40,6 +41,7 @@ open class PasscodeLockPresenter {
         let passcodeLockVC = PasscodeLockViewController(state: .enterPasscode, configuration: configuration)
         
         self.init(mainWindow: window, configuration: configuration, viewController: passcodeLockVC)
+        passcodeLockVC.successCallback = successCallback
     }
     
     open func presentPasscodeLock() {

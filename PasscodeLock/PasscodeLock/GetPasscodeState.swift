@@ -12,15 +12,13 @@ struct GetPasscodeState: PasscodeLockStateType {
     
     let title: String
     let description: String
-    let isCancellableAction: Bool
+    let isCancellableAction = true
     var isTouchIDAllowed = true
     
     fileprivate var inccorectPasscodeAttempts = 0
     fileprivate var isNotificationSent = false
     
-    init(allowCancellation: Bool = false) {
-        
-        isCancellableAction = allowCancellation
+    init() {
         title = localizedStringFor("PasscodeLockEnterTitle", comment: "Enter passcode title")
         description = localizedStringFor("PasscodeLockEnterDescription", comment: "Enter passcode description")
     }

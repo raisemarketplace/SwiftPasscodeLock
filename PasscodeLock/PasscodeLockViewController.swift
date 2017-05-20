@@ -8,6 +8,10 @@
 
 import UIKit
 
+public protocol PasscodeLockDelegate: class {
+    func whatsThisButtonAction()
+}
+
 open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegate {
     
     public enum LockState {
@@ -45,6 +49,7 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
     @IBOutlet open weak var hSpace1And2: NSLayoutConstraint!
     @IBOutlet open weak var hSpace2And3: NSLayoutConstraint!
     
+    open var delegate: PasscodeLockDelegate?
     open var getPasscodeBlock: ((_ passcode: [Int]) -> Void)?
     open var successCallback: ((_ lock: PasscodeLockType) -> Void)?
     open var dismissCompletionCallback: (()->Void)?
@@ -112,7 +117,6 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
     internal func updatePasscodeView() {
         
         titleLabel?.text = passcodeLock.state.title
-        infoButton.setTitle(passcodeLock.state.description, for: .normal)
         deleteCancelButton.isHidden = !passcodeLock.state.isCancellableAction
         touchIDButton?.isHidden = !passcodeLock.isTouchIDAllowed
     }
@@ -142,6 +146,22 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
     }
     
     // MARK: - Actions
+    
+    @IBAction func whatsThisButtonTap(_ sender: UIButton) {
+        let title = localizedStringFor("What's this? Title", comment: "Title")
+        let message = localizedStringFor("What's this? Message", comment: "Message")
+        let button1 = localizedStringFor("What's this? button1", comment: "Button 1")
+        let button2 = localizedStringFor("What's this? button2", comment: "Button 2")
+        
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        alertVC.addAction(UIAlertAction(title: button1, style: .cancel, handler: { action in
+            self.delegate?.whatsThisButtonAction()
+        }))
+        alertVC.addAction(UIAlertAction(title: button2, style: .default, handler: nil))
+        alertVC.view.tintColor = passcodeConfiguration.tintColor
+        present(alertVC, animated: true, completion: nil)
+    }
     
     @IBAction func passcodeSignButtonTap(_ sender: PasscodeSignButton) {
         

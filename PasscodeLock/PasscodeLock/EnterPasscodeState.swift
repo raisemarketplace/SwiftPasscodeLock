@@ -13,7 +13,6 @@ public let PasscodeLockIncorrectPasscodeNotification = "passcode.lock.incorrect.
 struct EnterPasscodeState: PasscodeLockStateType {
     
     let title: String
-    let description: String
     let isCancellableAction: Bool
     var isTouchIDAllowed = true
     
@@ -24,7 +23,6 @@ struct EnterPasscodeState: PasscodeLockStateType {
         
         isCancellableAction = allowCancellation
         title = localizedStringFor("PasscodeLockEnterTitle", comment: "Enter passcode title")
-        description = localizedStringFor("PasscodeLockEnterDescription", comment: "Enter passcode description")
     }
     
     mutating func accept(passcode: [Int], fromLock lock: PasscodeLockType) {

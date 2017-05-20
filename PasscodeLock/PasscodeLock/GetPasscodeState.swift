@@ -11,7 +11,6 @@ import Foundation
 struct GetPasscodeState: PasscodeLockStateType {
     
     let title: String
-    let description: String
     let isCancellableAction = true
     var isTouchIDAllowed = false
     
@@ -20,7 +19,6 @@ struct GetPasscodeState: PasscodeLockStateType {
     
     init() {
         title = localizedStringFor("PasscodeLockEnterTitle", comment: "Enter passcode title")
-        description = localizedStringFor("PasscodeLockEnterDescription", comment: "Enter passcode description")
     }
     
     mutating func accept(passcode: [Int], fromLock lock: PasscodeLockType) {

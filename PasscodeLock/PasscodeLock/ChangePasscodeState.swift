@@ -11,14 +11,11 @@ import Foundation
 struct ChangePasscodeState: PasscodeLockStateType {
     
     let title: String
-    let description: String
     let isCancellableAction = true
     var isTouchIDAllowed = false
     
     init() {
-        
         title = localizedStringFor("PasscodeLockChangeTitle", comment: "Change passcode title")
-        description = localizedStringFor("PasscodeLockChangeDescription", comment: "Change passcode description")
     }
     
     func accept(passcode: [Int], fromLock lock: PasscodeLockType) {

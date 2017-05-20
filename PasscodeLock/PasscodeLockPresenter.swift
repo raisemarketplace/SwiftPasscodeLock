@@ -102,6 +102,7 @@ open class PasscodeLockPresenter {
 
 extension PasscodeLockPresenter: PasscodeLockViewDelegate {
     public func success() {
+        dismissPasscodeLock()
         viewDelegate?.success()
     }
     

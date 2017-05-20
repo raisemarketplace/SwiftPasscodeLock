@@ -12,11 +12,6 @@ public protocol PasscodeLockDelegate: class {
     func whatsThisButtonAction()
 }
 
-public protocol PasscodeLockViewDelegate: class {
-    func success()
-    func dismiss()
-}
-
 open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegate {
     
     public enum LockState {
@@ -54,9 +49,10 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
     @IBOutlet open weak var hSpace1And2: NSLayoutConstraint!
     @IBOutlet open weak var hSpace2And3: NSLayoutConstraint!
     
-    open var delegate: PasscodeLockDelegate?
-    open weak var viewDelegate: PasscodeLockViewDelegate?
+    open weak var delegate: PasscodeLockDelegate?
     open var getPasscodeBlock: ((_ passcode: [Int]) -> Void)?
+    open var successCallback: ((_ lock: PasscodeLockType) -> Void)?
+    open var dismissCompletionCallback: (()->Void)?
     open var animateOnDismiss: Bool
     open var notificationCenter: NotificationCenter?
     
@@ -94,7 +90,7 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
     }
     
     deinit {
-        
+        delegate = nil
         clearEvents()
     }
     
@@ -204,9 +200,9 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
             dismiss(animated: animateOnDismiss, completion: { _ in
                 
                 if success {
-                    self.viewDelegate?.success()
+                    self.successCallback?(lock)
                 } else {
-                    self.viewDelegate?.dismiss()
+                    self.dismissCompletionCallback?()
                 }
             })
             
@@ -219,9 +215,9 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
         }
         
         if success {
-            self.viewDelegate?.success()
+            self.successCallback?(lock)
         } else {
-            self.viewDelegate?.dismiss()
+            self.dismissCompletionCallback?()
         }
     }
     

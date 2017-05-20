@@ -25,13 +25,7 @@ open class PasscodeLockPresenter {
     fileprivate let passcodeConfiguration: PasscodeLockConfigurationType
     open var isPasscodePresented = false
     open let passcodeLockVC: PasscodeLockViewController
-    open var successCallback: (() -> Void)? {
-        didSet {
-            self.passcodeLockVC.successCallback = { _ in
-                self.successCallback?()
-            }
-        }
-    }
+    open weak var viewDelegate: PasscodeLockViewDelegate?
     
     public init(mainWindow window: UIWindow?, configuration: PasscodeLockConfigurationType, viewController: PasscodeLockViewController) {
         
@@ -63,15 +57,7 @@ open class PasscodeLockPresenter {
         mainWindow?.endEditing(true)
         
         let passcodeLockVC = PasscodeLockViewController(state: .enterPasscode, configuration: passcodeConfiguration)
-        let userDismissCompletionCallback = passcodeLockVC.dismissCompletionCallback
-        
-        passcodeLockVC.dismissCompletionCallback = { [weak self] in
-            
-            userDismissCompletionCallback?()
-            
-            self?.dismissPasscodeLock()
-        }
-        
+        passcodeLockVC.viewDelegate = self
         passcodeLockWindow.rootViewController = passcodeLockVC
     }
     
@@ -111,5 +97,16 @@ open class PasscodeLockPresenter {
                 self?.passcodeLockWindow.alpha = 1
             }
         )
+    }
+}
+
+extension PasscodeLockPresenter: PasscodeLockViewDelegate {
+    public func success() {
+        viewDelegate?.success()
+    }
+    
+    public func dismiss() {
+        dismissPasscodeLock()
+        viewDelegate?.dismiss()
     }
 }

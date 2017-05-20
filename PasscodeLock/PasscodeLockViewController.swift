@@ -12,6 +12,11 @@ public protocol PasscodeLockDelegate: class {
     func whatsThisButtonAction()
 }
 
+public protocol PasscodeLockViewDelegate: class {
+    func success()
+    func dismiss()
+}
+
 open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegate {
     
     public enum LockState {
@@ -50,9 +55,8 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
     @IBOutlet open weak var hSpace2And3: NSLayoutConstraint!
     
     open var delegate: PasscodeLockDelegate?
+    open weak var viewDelegate: PasscodeLockViewDelegate?
     open var getPasscodeBlock: ((_ passcode: [Int]) -> Void)?
-    open var successCallback: ((_ lock: PasscodeLockType) -> Void)?
-    open var dismissCompletionCallback: (()->Void)?
     open var animateOnDismiss: Bool
     open var notificationCenter: NotificationCenter?
     
@@ -173,7 +177,7 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
     @IBAction func deleteSignButtonTap(_ sender: UIButton) {
         
         if let buttonTitle = deleteCancelButton.titleLabel?.text, buttonTitle == "Cancel" {
-            dismissPasscodeLock(passcodeLock)
+            dismissPasscodeLock(passcodeLock, success: false)
         } else {
             passcodeLock.removeSign()
         }
@@ -192,16 +196,18 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
         }
     }
     
-    internal func dismissPasscodeLock(_ lock: PasscodeLockType, completionHandler: (() -> Void)? = nil) {
+    internal func dismissPasscodeLock(_ lock: PasscodeLockType, success: Bool) {
         
         // if presented as modal
         if presentingViewController?.presentedViewController == self {
             
-            dismiss(animated: animateOnDismiss, completion: { [weak self] _ in
+            dismiss(animated: animateOnDismiss, completion: { _ in
                 
-                self?.dismissCompletionCallback?()
-                
-                completionHandler?()
+                if success {
+                    self.viewDelegate?.success()
+                } else {
+                    self.viewDelegate?.dismiss()
+                }
             })
             
             return
@@ -212,9 +218,11 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
             navigationController?.popViewController(animated: animateOnDismiss)
         }
         
-        dismissCompletionCallback?()
-        
-        completionHandler?()
+        if success {
+            self.viewDelegate?.success()
+        } else {
+            self.viewDelegate?.dismiss()
+        }
     }
     
     // MARK: - Animations
@@ -268,9 +276,7 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
         
         deleteCancelButton?.setTitle("Delete", for: .normal)
         animatePlaceholders(placeholders, toState: .inactive)
-        dismissPasscodeLock(lock, completionHandler: { [weak self] _ in
-            self?.successCallback?(lock)
-        })
+        dismissPasscodeLock(lock, success: true)
     }
     
     open func passcodeLockDidFail(_ lock: PasscodeLockType) {

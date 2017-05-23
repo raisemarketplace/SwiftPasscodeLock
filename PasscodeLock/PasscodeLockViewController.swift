@@ -8,10 +8,6 @@
 
 import UIKit
 
-public protocol PasscodeLockDelegate: class {
-    func whatsThisButtonAction()
-}
-
 open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegate {
     
     public enum LockState {
@@ -49,10 +45,10 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
     @IBOutlet open weak var hSpace1And2: NSLayoutConstraint!
     @IBOutlet open weak var hSpace2And3: NSLayoutConstraint!
     
-    open weak var delegate: PasscodeLockDelegate?
     open var getPasscodeBlock: ((_ passcode: [Int]) -> Void)?
     open var successCallback: ((_ lock: PasscodeLockType) -> Void)?
     open var dismissCompletionCallback: (()->Void)?
+    open var helpVC: UIViewController?
     open var animateOnDismiss: Bool
     open var notificationCenter: NotificationCenter?
     
@@ -90,7 +86,6 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
     }
     
     deinit {
-        delegate = nil
         clearEvents()
     }
     
@@ -156,7 +151,9 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         alertVC.addAction(UIAlertAction(title: button1, style: .cancel, handler: { action in
-            self.delegate?.whatsThisButtonAction()
+            if let helpVC = self.helpVC {
+                self.present(helpVC, animated: true, completion: nil)
+            }
         }))
         alertVC.addAction(UIAlertAction(title: button2, style: .default, handler: nil))
         alertVC.view.tintColor = passcodeConfiguration.tintColor
@@ -305,5 +302,9 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
     open func passcodeEntered(_ passcode: [Int]) {
         
         getPasscodeBlock?(passcode)
+    }
+    
+    open func dismissHelpVC() {
+        helpVC?.dismiss(animated: true, completion: nil)
     }
 }

@@ -16,6 +16,7 @@ struct PasscodeLockConfiguration: PasscodeLockConfigurationType {
     var isTouchIDAllowed = true
     let shouldRequestTouchIDImmediately = true
     let maximumInccorectPasscodeAttempts = -1
+    let tintColor = UIColor.blue
     
     init(repository: PasscodeRepositoryType) {
         

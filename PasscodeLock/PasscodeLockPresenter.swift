@@ -27,6 +27,7 @@ open class PasscodeLockPresenter {
     open let passcodeLockVC: PasscodeLockViewController
     open var successCallback: ((_ lock: PasscodeLockType) -> Void)?
     open var dismissCompletionCallback: (() -> Void)?
+    open var helpVC: UIViewController?
     
     public init(mainWindow window: UIWindow?, configuration: PasscodeLockConfigurationType, viewController: PasscodeLockViewController) {
         
@@ -66,6 +67,7 @@ open class PasscodeLockPresenter {
             self.dismissPasscodeLock()
             self.dismissCompletionCallback?()
         }
+        passcodeLockVC.helpVC = helpVC
         passcodeLockWindow.rootViewController = passcodeLockVC
     }
     
@@ -105,5 +107,9 @@ open class PasscodeLockPresenter {
                 self?.passcodeLockWindow.alpha = 1
             }
         )
+    }
+    
+    open func dismissHelpVC() {
+        passcodeLockVC.dismissHelpVC()
     }
 }

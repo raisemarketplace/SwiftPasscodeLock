@@ -45,6 +45,24 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
     @IBOutlet open weak var hSpace1And2: NSLayoutConstraint!
     @IBOutlet open weak var hSpace2And3: NSLayoutConstraint!
     
+    @IBOutlet open weak var v2: NSLayoutConstraint!
+    @IBOutlet open weak var v3: NSLayoutConstraint!
+    @IBOutlet open weak var v4: NSLayoutConstraint!
+    @IBOutlet open weak var v5: NSLayoutConstraint!
+    @IBOutlet open weak var v6: NSLayoutConstraint!
+    @IBOutlet open weak var v7: NSLayoutConstraint!
+    @IBOutlet open weak var v8: NSLayoutConstraint!
+    @IBOutlet open weak var v9: NSLayoutConstraint!
+    
+    @IBOutlet open weak var vAbc: NSLayoutConstraint!
+    @IBOutlet open weak var vDef: NSLayoutConstraint!
+    @IBOutlet open weak var vGhi: NSLayoutConstraint!
+    @IBOutlet open weak var vJkl: NSLayoutConstraint!
+    @IBOutlet open weak var vMno: NSLayoutConstraint!
+    @IBOutlet open weak var vPqrs: NSLayoutConstraint!
+    @IBOutlet open weak var vTuv: NSLayoutConstraint!
+    @IBOutlet open weak var vWxyz: NSLayoutConstraint!
+    
     open var getPasscodeBlock: ((_ passcode: [Int]) -> Void)?
     open var successCallback: ((_ lock: PasscodeLockType) -> Void)?
     open var dismissCompletionCallback: (()->Void)?
@@ -93,7 +111,7 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-        
+        updateConstraint()
         updatePasscodeView()
         deleteCancelButton?.setTitle("Cancel", for: .normal)
         
@@ -107,6 +125,44 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
         
             authenticateWithBiometrics()
         }
+    }
+    
+    private func updateConstraint() {
+        let ratio = UIScreen.main.bounds.height / 667
+        
+        vSpaceLabelTop.constant = 43.5 * ratio
+        vSpaceLabelAndDots.constant = 24 * ratio
+        vSpaceDotsAnd2.constant = 53.5 * ratio
+        
+        let b = 15 * ratio
+        vSpace2ANd5.constant = b
+        vSpace5And8.constant = b
+        vSpace8And0.constant = b
+        
+        let c = 28 * ratio
+        hSpace1And2.constant = c
+        hSpace2And3.constant = c
+        
+        let d = -6.5 * ratio
+        v2.constant = d
+        v3.constant = d
+        v4.constant = d
+        v5.constant = d
+        v6.constant = d
+        v7.constant = d
+        v8.constant = d
+        v9.constant = d
+        
+        let e = 15.5 * ratio
+        vAbc.constant = e
+        vDef.constant = e
+        vGhi.constant = e
+        vJkl.constant = e
+        vMno.constant = e
+        vPqrs.constant = e
+        vTuv.constant = e
+        vWxyz.constant = e
+        
     }
     
     internal func updatePasscodeView() {

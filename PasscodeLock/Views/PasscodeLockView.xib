@@ -573,7 +573,7 @@
                         <action selector="passcodeSignButtonTap:" destination="-1" eventType="touchUpInside" id="lGc-z4-PyQ"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H78-kl-y6L">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H78-kl-y6L" customClass="AutoFontSizeAdjustingButton" customModule="PasscodeLock" customModuleProvider="target">
                     <rect key="frame" x="252.5" y="607" width="55" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="yOX-U0-bfz"/>
@@ -590,7 +590,7 @@
                         <action selector="deleteSignButtonTap:" destination="-1" eventType="touchUpInside" id="uXY-lj-GdX"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ph-dj-v7R" userLabel="TouchID Button">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ph-dj-v7R" userLabel="TouchID Button" customClass="AutoFontSizeAdjustingButton" customModule="PasscodeLock" customModuleProvider="target">
                     <rect key="frame" x="59" y="607" width="73" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="XzZ-yU-n56"/>
@@ -604,7 +604,7 @@
                         <action selector="touchIDButtonTap:" destination="-1" eventType="touchUpInside" id="MT9-Ev-GsW"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJM-nq-RPC">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJM-nq-RPC" customClass="AutoFontSizeAdjustingButton" customModule="PasscodeLock" customModuleProvider="target">
                     <rect key="frame" x="147.5" y="87.5" width="80" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="i4x-yY-W3r"/>

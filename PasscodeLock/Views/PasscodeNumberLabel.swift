@@ -11,13 +11,6 @@ import UIKit
 @IBDesignable
 open class PasscodeNumberLabel: UILabel {
     
-    @IBInspectable
-    open var fontSize: CGFloat = 10 {
-        didSet {
-            setupView()
-        }
-    }
-    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -30,6 +23,6 @@ open class PasscodeNumberLabel: UILabel {
     }
     
     fileprivate func setupView() {
-        self.font = UIFont(descriptor: self.font.fontDescriptor, size: fontSize / 375 * UIScreen.main.bounds.width)
+        font = UIFont(descriptor: font.fontDescriptor, size: font.pointSize / 375 * UIScreen.main.bounds.width)
     }
 }

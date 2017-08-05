@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-open class PasscodeSignPlaceholderView: UIView {
+open class PasscodeSignPlaceholderView: AutoSizeAdjustingCircularView {
     
     public enum State {
         case inactive
@@ -38,26 +38,8 @@ open class PasscodeSignPlaceholderView: UIView {
         }
     }
     
-    public override init(frame: CGRect) {
-        
-        super.init(frame: frame)
-        
-        setupView()
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        
-        super.init(coder: aDecoder)
-    }
-    
-    @IBInspectable open override var intrinsicContentSize : CGSize {
-        
-        return CGSize(width: 12, height: 12)
-    }
-    
-    fileprivate func setupView() {
-        
-        layer.cornerRadius = 6
+    override func setupView() {
+        super.setupView()
         layer.borderWidth = 1
         layer.borderColor = activeColor.cgColor
         backgroundColor = inactiveColor

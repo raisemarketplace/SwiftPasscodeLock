@@ -38,6 +38,11 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
     
     @IBOutlet open weak var vSpaceLabelTop: NSLayoutConstraint!
     @IBOutlet open weak var vSpaceLabelAndDots: NSLayoutConstraint!
+    
+    @IBOutlet open weak var hDotSpace1And2: NSLayoutConstraint!
+    @IBOutlet open weak var hDotSpace2And3: NSLayoutConstraint!
+    @IBOutlet open weak var hDotSpace3And4: NSLayoutConstraint!
+    
     @IBOutlet open weak var vSpaceDotsAnd2: NSLayoutConstraint!
     @IBOutlet open weak var vSpace2ANd5: NSLayoutConstraint!
     @IBOutlet open weak var vSpace5And8: NSLayoutConstraint!
@@ -62,6 +67,9 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
     @IBOutlet open weak var vPqrs: NSLayoutConstraint!
     @IBOutlet open weak var vTuv: NSLayoutConstraint!
     @IBOutlet open weak var vWxyz: NSLayoutConstraint!
+    
+    @IBOutlet open weak var touchIDButtonBottom: NSLayoutConstraint!
+    @IBOutlet open weak var deleteButtonBottom: NSLayoutConstraint!
     
     open var getPasscodeBlock: ((_ passcode: [Int]) -> Void)?
     open var successCallback: ((_ lock: PasscodeLockType) -> Void)?
@@ -130,39 +138,42 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
     private func updateConstraint() {
         let ratio = UIScreen.main.bounds.height / 667
         
-        vSpaceLabelTop.constant = 43.5 * ratio
-        vSpaceLabelAndDots.constant = 24 * ratio
-        vSpaceDotsAnd2.constant = 53.5 * ratio
+        vSpaceLabelTop.constant = vSpaceLabelTop.constant * ratio
+        vSpaceLabelAndDots.constant = vSpaceLabelAndDots.constant * ratio
         
-        let b = 15 * ratio
-        vSpace2ANd5.constant = b
-        vSpace5And8.constant = b
-        vSpace8And0.constant = b
+        hDotSpace1And2.constant = hDotSpace1And2.constant * ratio
+        hDotSpace2And3.constant = hDotSpace2And3.constant * ratio
+        hDotSpace3And4.constant = hDotSpace3And4.constant * ratio
         
-        let c = 28 * ratio
-        hSpace1And2.constant = c
-        hSpace2And3.constant = c
+        vSpaceDotsAnd2.constant = vSpaceDotsAnd2.constant * ratio
         
-        let d = -6.5 * ratio
-        v2.constant = d
-        v3.constant = d
-        v4.constant = d
-        v5.constant = d
-        v6.constant = d
-        v7.constant = d
-        v8.constant = d
-        v9.constant = d
+        vSpace2ANd5.constant = vSpace2ANd5.constant * ratio
+        vSpace5And8.constant = vSpace5And8.constant * ratio
+        vSpace8And0.constant = vSpace8And0.constant * ratio
         
-        let e = 15.5 * ratio
-        vAbc.constant = e
-        vDef.constant = e
-        vGhi.constant = e
-        vJkl.constant = e
-        vMno.constant = e
-        vPqrs.constant = e
-        vTuv.constant = e
-        vWxyz.constant = e
+        hSpace1And2.constant = hSpace1And2.constant * ratio
+        hSpace2And3.constant = hSpace2And3.constant * ratio
         
+        v2.constant = v2.constant * ratio
+        v3.constant = v3.constant * ratio
+        v4.constant = v4.constant * ratio
+        v5.constant = v5.constant * ratio
+        v6.constant = v6.constant * ratio
+        v7.constant = v7.constant * ratio
+        v8.constant = v8.constant * ratio
+        v9.constant = v9.constant * ratio
+        
+        vAbc.constant = vAbc.constant * ratio
+        vDef.constant = vDef.constant * ratio
+        vGhi.constant = vGhi.constant * ratio
+        vJkl.constant = vJkl.constant * ratio
+        vMno.constant = vMno.constant * ratio
+        vPqrs.constant = vPqrs.constant * ratio
+        vTuv.constant = vTuv.constant * ratio
+        vWxyz.constant = vWxyz.constant * ratio
+        
+        touchIDButtonBottom.constant = touchIDButtonBottom.constant * ratio
+        deleteButtonBottom.constant = deleteButtonBottom.constant * ratio
     }
     
     internal func updatePasscodeView() {

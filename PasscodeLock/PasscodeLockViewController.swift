@@ -43,7 +43,6 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
     @IBOutlet open weak var hDotSpace2And3: NSLayoutConstraint!
     @IBOutlet open weak var hDotSpace3And4: NSLayoutConstraint!
     
-    @IBOutlet open weak var vSpaceDotsAnd2: NSLayoutConstraint!
     @IBOutlet open weak var vSpace2ANd5: NSLayoutConstraint!
     @IBOutlet open weak var vSpace5And8: NSLayoutConstraint!
     @IBOutlet open weak var vSpace8And0: NSLayoutConstraint!
@@ -144,8 +143,6 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
         hDotSpace1And2.constant = hDotSpace1And2.constant * ratio
         hDotSpace2And3.constant = hDotSpace2And3.constant * ratio
         hDotSpace3And4.constant = hDotSpace3And4.constant * ratio
-        
-        vSpaceDotsAnd2.constant = vSpaceDotsAnd2.constant * ratio
         
         vSpace2ANd5.constant = vSpace2ANd5.constant * ratio
         vSpace5And8.constant = vSpace5And8.constant * ratio

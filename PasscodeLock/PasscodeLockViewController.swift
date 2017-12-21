@@ -194,12 +194,12 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
         notificationCenter?.removeObserver(self, name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
     }
     
-    open func appWillEnterForegroundHandler(_ notification: Notification) {
+    @objc open func appWillEnterForegroundHandler(_ notification: Notification) {
         
         authenticateWithBiometrics()
     }
     
-    open func appDidEnterBackgroundHandler(_ notification: Notification) {
+    @objc open func appDidEnterBackgroundHandler(_ notification: Notification) {
         
         shouldTryToAuthenticateWithBiometrics = false
     }
@@ -258,7 +258,7 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
         // if presented as modal
         if presentingViewController?.presentedViewController == self {
             
-            dismiss(animated: animateOnDismiss, completion: { _ in
+            dismiss(animated: animateOnDismiss, completion: {
                 
                 if success {
                     self.successCallback?(lock)

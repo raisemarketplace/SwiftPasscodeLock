@@ -16,7 +16,7 @@ open class PasscodeLockPresenter {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         
-        window.windowLevel = 0
+        window.windowLevel = UIWindow.Level(rawValue: 0)
         window.makeKeyAndVisible()
         
         return window
@@ -32,7 +32,7 @@ open class PasscodeLockPresenter {
     public init(mainWindow window: UIWindow?, configuration: PasscodeLockConfigurationType, viewController: PasscodeLockViewController) {
         
         mainWindow = window
-        mainWindow?.windowLevel = 1
+        mainWindow?.windowLevel = UIWindow.Level(rawValue: 1)
         passcodeConfiguration = configuration
         
         passcodeLockVC = viewController
@@ -52,10 +52,10 @@ open class PasscodeLockPresenter {
         
         isPasscodePresented = true
         
-        passcodeLockWindow.windowLevel = 2
+        passcodeLockWindow.windowLevel = UIWindow.Level(rawValue: 2)
         passcodeLockWindow.isHidden = false
         
-        mainWindow?.windowLevel = 1
+        mainWindow?.windowLevel = UIWindow.Level(rawValue: 1)
         mainWindow?.endEditing(true)
         
         let passcodeLockVC = PasscodeLockViewController(state: .enterPasscode, configuration: passcodeConfiguration)
@@ -74,7 +74,7 @@ open class PasscodeLockPresenter {
     open func dismissPasscodeLock(animated: Bool = true) {
         
         isPasscodePresented = false
-        mainWindow?.windowLevel = 1
+        mainWindow?.windowLevel = UIWindow.Level(rawValue: 1)
         mainWindow?.makeKeyAndVisible()
         
         if animated {
@@ -83,7 +83,7 @@ open class PasscodeLockPresenter {
             
         } else {
             
-            passcodeLockWindow.windowLevel = 0
+            passcodeLockWindow.windowLevel = UIWindow.Level(rawValue: 0)
             passcodeLockWindow.rootViewController = nil
         }
     }
@@ -95,14 +95,14 @@ open class PasscodeLockPresenter {
             delay: 0,
             usingSpringWithDamping: 1,
             initialSpringVelocity: 0,
-            options: UIViewAnimationOptions(),
+            options: UIView.AnimationOptions(),
             animations: { [weak self] in
                 
                 self?.passcodeLockWindow.alpha = 0
             },
             completion: { [weak self] _ in
                 
-                self?.passcodeLockWindow.windowLevel = 0
+                self?.passcodeLockWindow.windowLevel = UIWindow.Level(rawValue: 0)
                 self?.passcodeLockWindow.rootViewController = nil
                 self?.passcodeLockWindow.alpha = 1
             }

@@ -6,7 +6,7 @@ s.summary = 'An iOS passcode lock with Touch ID authentication written in Swift.
 s.homepage = 'https://github.com/yankodimitrov/SwiftPasscodeLock'
 s.authors = { 'Yanko Dimitrov' => '' }
 s.source = { :git => 'https://github.com/yankodimitrov/SwiftPasscodeLock.git' }
-
+s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.2' }
 s.ios.deployment_target = '9.0'
 
 s.source_files = 'PasscodeLock/*.{h,swift}',

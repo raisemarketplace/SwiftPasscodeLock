@@ -24,7 +24,7 @@ open class PasscodeLockPresenter {
     
     fileprivate let passcodeConfiguration: PasscodeLockConfigurationType
     open var isPasscodePresented = false
-    open let passcodeLockVC: PasscodeLockViewController
+    public let passcodeLockVC: PasscodeLockViewController
     open var successCallback: ((_ lock: PasscodeLockType) -> Void)?
     open var dismissCompletionCallback: (() -> Void)?
     open var helpVC: UIViewController?

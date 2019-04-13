@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2314C4352262133C0003482E /* AutoSizeAdjustingCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2314C4332262133C0003482E /* AutoSizeAdjustingCircularView.swift */; };
+		2314C4362262133C0003482E /* AutoFontSizeAdjustingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2314C4342262133C0003482E /* AutoFontSizeAdjustingLabel.swift */; };
 		5C96A7C01ECE4B94004199D3 /* GetPasscodeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C96A7BF1ECE4B94004199D3 /* GetPasscodeState.swift */; };
 		C99EAF431B90B05700D61E1B /* PasscodeLock.h in Headers */ = {isa = PBXBuildFile; fileRef = C99EAF421B90B05700D61E1B /* PasscodeLock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C99EAF4A1B90B05800D61E1B /* PasscodeLock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C99EAF3F1B90B05700D61E1B /* PasscodeLock.framework */; };
@@ -105,6 +107,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2314C4332262133C0003482E /* AutoSizeAdjustingCircularView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoSizeAdjustingCircularView.swift; sourceTree = "<group>"; };
+		2314C4342262133C0003482E /* AutoFontSizeAdjustingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoFontSizeAdjustingLabel.swift; sourceTree = "<group>"; };
 		5C96A7BF1ECE4B94004199D3 /* GetPasscodeState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPasscodeState.swift; sourceTree = "<group>"; };
 		C99EAF3F1B90B05700D61E1B /* PasscodeLock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PasscodeLock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C99EAF421B90B05700D61E1B /* PasscodeLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasscodeLock.h; sourceTree = "<group>"; };
@@ -306,6 +310,8 @@
 		C9DC07D31B90B1CE007A4DD0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2314C4342262133C0003482E /* AutoFontSizeAdjustingLabel.swift */,
+				2314C4332262133C0003482E /* AutoSizeAdjustingCircularView.swift */,
 				C9DC08111B90DE1B007A4DD0 /* PasscodeSignPlaceholderView.swift */,
 				C9DC08131B90DE50007A4DD0 /* PasscodeSignButton.swift */,
 				C9D3DF0A1B919CE4008561EB /* PasscodeLockView.xib */,
@@ -479,6 +485,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -548,6 +555,7 @@
 				C9DC07FF1B90D24A007A4DD0 /* SetPasscodeState.swift in Sources */,
 				C9DC08051B90D394007A4DD0 /* ChangePasscodeState.swift in Sources */,
 				5C96A7C01ECE4B94004199D3 /* GetPasscodeState.swift in Sources */,
+				2314C4352262133C0003482E /* AutoSizeAdjustingCircularView.swift in Sources */,
 				C9DC08021B90D2BA007A4DD0 /* ConfirmPasscodeState.swift in Sources */,
 				C9DC08121B90DE1B007A4DD0 /* PasscodeSignPlaceholderView.swift in Sources */,
 				C9DC07F21B90C9DE007A4DD0 /* EnterPasscodeState.swift in Sources */,
@@ -557,6 +565,7 @@
 				C9DC08161B90DF4E007A4DD0 /* PasscodeLockViewController.swift in Sources */,
 				C9DC07E11B90BBFD007A4DD0 /* PasscodeLock.swift in Sources */,
 				C9DC07F81B90CF29007A4DD0 /* Functions.swift in Sources */,
+				2314C4362262133C0003482E /* AutoFontSizeAdjustingLabel.swift in Sources */,
 				C9DC07DB1B90B730007A4DD0 /* PasscodeLockConfigurationType.swift in Sources */,
 				C9DC07DE1B90BA06007A4DD0 /* PasscodeLockType.swift in Sources */,
 				C9DC07D51B90B1F6007A4DD0 /* PasscodeRepositoryType.swift in Sources */,
@@ -712,7 +721,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -756,7 +765,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";

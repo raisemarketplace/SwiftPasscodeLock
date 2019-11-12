@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
+        <development version="11000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -39,7 +41,6 @@
                 <outlet property="vSpace5And8" destination="Vo4-YP-n8O" id="Q5L-ML-47W"/>
                 <outlet property="vSpace8And0" destination="Sah-YV-A2O" id="8Eh-QP-VMk"/>
                 <outlet property="vSpaceLabelAndDots" destination="5xi-ON-eDG" id="Eif-Aa-3eW"/>
-                <outlet property="vSpaceLabelTop" destination="STC-Oe-YVu" id="RQ5-xy-e13"/>
                 <outlet property="vTuv" destination="DUf-sv-Jbw" id="Pwg-wt-Gpe"/>
                 <outlet property="vWxyz" destination="GhF-KZ-zSJ" id="gTa-e0-nUh"/>
                 <outlet property="view" destination="iN0-l3-epB" id="4dc-hJ-geg"/>
@@ -55,13 +56,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Your Passcode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wK-Ol-7mm" customClass="AutoFontSizeAdjustingLabel" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="98.5" y="63.5" width="178" height="24"/>
+                    <rect key="frame" x="98.5" y="44" width="178" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HcN-lo-9Jb" userLabel="Placeholders">
-                    <rect key="frame" x="124.5" y="137.5" width="126" height="12"/>
+                    <rect key="frame" x="124.5" y="118" width="126" height="12"/>
                     <subviews>
                         <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w14-Kb-Jnf" userLabel="Placeholder 1" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="12" height="12"/>
@@ -574,7 +575,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJM-nq-RPC" customClass="AutoFontSizeAdjustingButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="147.5" y="87.5" width="80" height="30"/>
+                    <rect key="frame" x="147.5" y="68" width="80" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="i4x-yY-W3r"/>
                     </constraints>
@@ -633,7 +634,6 @@
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Qup-3g-Gux"/>
                 <constraint firstItem="PbJ-Y8-MMf" firstAttribute="centerX" secondItem="C9Z-3u-ohd" secondAttribute="centerX" id="R1h-wb-tm1"/>
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="trailing" constant="16" id="RDw-W3-MpZ"/>
-                <constraint firstItem="1wK-Ol-7mm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="63.5" id="STC-Oe-YVu"/>
                 <constraint firstItem="0CR-0R-0Nr" firstAttribute="top" secondItem="PbJ-Y8-MMf" secondAttribute="bottom" constant="15" id="Sah-YV-A2O"/>
                 <constraint firstItem="574-79-ptz" firstAttribute="centerX" secondItem="C9Z-3u-ohd" secondAttribute="centerX" id="Tr5-Hv-dtk"/>
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="VMo-hv-2qR"/>
@@ -657,6 +657,7 @@
                 <constraint firstItem="EUD-XB-0CR" firstAttribute="top" secondItem="PbJ-Y8-MMf" secondAttribute="top" id="eJW-hC-dGC"/>
                 <constraint firstItem="wWP-22-wlq" firstAttribute="centerY" secondItem="RA8-jd-dag" secondAttribute="centerY" constant="15.5" id="eRp-Tt-JdN"/>
                 <constraint firstItem="0Ph-dj-v7R" firstAttribute="centerX" secondItem="RA8-jd-dag" secondAttribute="centerX" id="f7K-2R-Bg0"/>
+                <constraint firstItem="1wK-Ol-7mm" firstAttribute="top" secondItem="2e7-6b-ys6" secondAttribute="top" constant="44" id="fLr-03-mmN"/>
                 <constraint firstItem="53u-Uv-OmD" firstAttribute="centerY" secondItem="pLy-90-g1a" secondAttribute="centerY" constant="15.5" id="iVl-gj-Cw6"/>
                 <constraint firstItem="RA8-jd-dag" firstAttribute="centerX" secondItem="RR4-5o-pli" secondAttribute="centerX" id="inw-ZS-osP"/>
                 <constraint firstItem="KxD-79-K9N" firstAttribute="centerX" secondItem="cuq-ue-Jyj" secondAttribute="centerX" id="kOZ-rJ-cc3"/>
@@ -668,6 +669,7 @@
                 <constraint firstItem="WDx-aD-wJK" firstAttribute="top" secondItem="C9Z-3u-ohd" secondAttribute="top" id="xuJ-4l-etR"/>
                 <constraint firstItem="C9Z-3u-ohd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="y7P-FW-V10"/>
             </constraints>
+            <viewLayoutGuide key="safeArea" id="2e7-6b-ys6"/>
             <point key="canvasLocation" x="-90" y="66"/>
         </view>
     </objects>

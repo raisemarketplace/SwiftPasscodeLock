@@ -38,13 +38,6 @@ open class PasscodeLockPresenter {
         passcodeLockVC = viewController
     }
 
-    public convenience init(mainWindow window: UIWindow?, configuration: PasscodeLockConfigurationType) {
-        
-        let passcodeLockVC = PasscodeLockViewController(state: .enterPasscode, configuration: configuration)
-        
-        self.init(mainWindow: window, configuration: configuration, viewController: passcodeLockVC)
-    }
-    
     open func presentPasscodeLock() {
         
         guard passcodeConfiguration.repository.hasPasscode else { return }
@@ -58,7 +51,6 @@ open class PasscodeLockPresenter {
         mainWindow?.windowLevel = UIWindow.Level(rawValue: 1)
         mainWindow?.endEditing(true)
         
-        let passcodeLockVC = PasscodeLockViewController(state: .enterPasscode, configuration: passcodeConfiguration)
         passcodeLockVC.successCallback = { lock in
             self.dismissPasscodeLock()
             self.successCallback?(lock)

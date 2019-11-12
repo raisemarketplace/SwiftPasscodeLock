@@ -101,10 +101,6 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
         self.init(nibName: nibName, bundle: bundle, state: state, configuration: configuration, animateOnDismiss: animateOnDismiss)
     }
     
-    public convenience init(state: LockState, configuration: PasscodeLockConfigurationType, animateOnDismiss: Bool = true) {
-        self.init(state: state.getState(), configuration: configuration, animateOnDismiss: animateOnDismiss)
-    }
-    
     public convenience init(nibName: String?, bundle: Bundle?, state: LockState, configuration: PasscodeLockConfigurationType, animateOnDismiss: Bool = true) {
         self.init(nibName: nibName, bundle: bundle, state: state.getState(), configuration: configuration, animateOnDismiss: animateOnDismiss)
     }

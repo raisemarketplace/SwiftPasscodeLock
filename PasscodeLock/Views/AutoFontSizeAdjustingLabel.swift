@@ -41,6 +41,6 @@ open class AutoFontSizeAdjustingButton: UIButton {
     
     fileprivate func setupView() {
         guard let font = titleLabel?.font else { return }
-        titleLabel?.font = UIFont(descriptor: font.fontDescriptor, size: font.pointSize / 375 * UIScreen.main.bounds.width)
+        titleLabel?.font = UIFont(descriptor: font.fontDescriptor, size: font.pointSize / 414 * UIScreen.main.bounds.width)
     }
 }

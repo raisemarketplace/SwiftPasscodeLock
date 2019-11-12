@@ -36,7 +36,6 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
     @IBOutlet open weak var touchIDButton: UIButton!
     @IBOutlet open weak var placeholdersX: NSLayoutConstraint!
     
-    @IBOutlet open weak var vSpaceLabelTop: NSLayoutConstraint!
     @IBOutlet open weak var vSpaceLabelAndDots: NSLayoutConstraint!
     
     @IBOutlet open weak var hDotSpace1And2: NSLayoutConstraint!
@@ -85,25 +84,29 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
     
     // MARK: - Initializers
     
-    public init(state: PasscodeLockStateType, configuration: PasscodeLockConfigurationType, animateOnDismiss: Bool = true) {
-        
+    public init(nibName: String?, bundle: Bundle?, state: PasscodeLockStateType, configuration: PasscodeLockConfigurationType, animateOnDismiss: Bool = true) {
         self.animateOnDismiss = animateOnDismiss
         
         passcodeConfiguration = configuration
         passcodeLock = PasscodeLock(state: state, configuration: configuration)
-        
-        let nibName = "PasscodeLockView"
-        let bundle: Bundle = bundleForResource(nibName, ofType: "nib")
-        
+
         super.init(nibName: nibName, bundle: bundle)
-        
         passcodeLock.delegate = self
         notificationCenter = NotificationCenter.default
     }
     
+    public convenience init(state: PasscodeLockStateType, configuration: PasscodeLockConfigurationType, animateOnDismiss: Bool = true) {
+        let nibName = "PasscodeLockView"
+        let bundle: Bundle = bundleForResource(nibName, ofType: "nib")
+        self.init(nibName: nibName, bundle: bundle, state: state, configuration: configuration, animateOnDismiss: animateOnDismiss)
+    }
+    
     public convenience init(state: LockState, configuration: PasscodeLockConfigurationType, animateOnDismiss: Bool = true) {
-        
         self.init(state: state.getState(), configuration: configuration, animateOnDismiss: animateOnDismiss)
+    }
+    
+    public convenience init(nibName: String?, bundle: Bundle?, state: LockState, configuration: PasscodeLockConfigurationType, animateOnDismiss: Bool = true) {
+        self.init(nibName: nibName, bundle: bundle, state: state.getState(), configuration: configuration, animateOnDismiss: animateOnDismiss)
     }
     
     public required init(coder aDecoder: NSCoder) {
@@ -137,7 +140,6 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
     private func updateConstraint() {
         let ratio = UIScreen.main.bounds.height / 667
         
-        vSpaceLabelTop.constant = vSpaceLabelTop.constant * ratio
         vSpaceLabelAndDots.constant = vSpaceLabelAndDots.constant * ratio
         
         hDotSpace1And2.constant = hDotSpace1And2.constant * ratio

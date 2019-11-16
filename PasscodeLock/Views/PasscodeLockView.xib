@@ -3,7 +3,6 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <development version="11000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -61,10 +60,10 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HcN-lo-9Jb" userLabel="Placeholders">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HcN-lo-9Jb" userLabel="Placeholders">
                     <rect key="frame" x="124.5" y="118" width="126" height="12"/>
                     <subviews>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w14-Kb-Jnf" userLabel="Placeholder 1" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w14-Kb-Jnf" userLabel="Placeholder 1" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="12" height="12"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <userDefinedRuntimeAttributes>
@@ -82,7 +81,7 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OSf-H5-f20" userLabel="Placeholder 2" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSf-H5-f20" userLabel="Placeholder 2" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
                             <rect key="frame" x="38" y="0.0" width="12" height="12"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <userDefinedRuntimeAttributes>
@@ -100,7 +99,7 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Tg-dE-gH4" userLabel="Placeholder 3" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Tg-dE-gH4" userLabel="Placeholder 3" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
                             <rect key="frame" x="76" y="0.0" width="12" height="12"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <userDefinedRuntimeAttributes>
@@ -118,7 +117,7 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fhs-1e-Ysl" userLabel="Placeholder 4" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fhs-1e-Ysl" userLabel="Placeholder 4" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
                             <rect key="frame" x="114" y="0.0" width="12" height="12"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <userDefinedRuntimeAttributes>
@@ -156,7 +155,10 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuq-ue-Jyj" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="114.5" y="261.5" width="30" height="38"/>
+                    <rect key="frame" x="36" y="195" width="82.5" height="82.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="cuq-ue-Jyj" secondAttribute="height" multiplier="1:1" id="iau-Rd-jct"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                     <state key="normal">
                         <color key="titleColor" red="0.45882352941176469" green="0.60392156862745094" blue="0.89411764705882357" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -181,7 +183,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxD-79-K9N" customClass="AutoFontSizeAdjustingLabel" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="122" y="271" width="15" height="43"/>
+                    <rect key="frame" x="69.5" y="204.5" width="15" height="43"/>
                     <accessibility key="accessibilityConfiguration">
                         <accessibilityTraits key="traits" notEnabled="YES"/>
                         <bool key="isElement" value="NO"/>
@@ -191,7 +193,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGh-ph-49t" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="172.5" y="261.5" width="30" height="38"/>
+                    <rect key="frame" x="146.5" y="195" width="82.5" height="82.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="CGh-ph-49t" secondAttribute="height" multiplier="1:1" id="529-sP-0j5"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                     <state key="normal">
                         <color key="titleColor" red="0.45882352939999999" green="0.60392156860000001" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -216,7 +221,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANs-Mf-s43" customClass="AutoFontSizeAdjustingLabel" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="177.5" y="252.5" width="20.5" height="43"/>
+                    <rect key="frame" x="177.5" y="208" width="20.5" height="43"/>
                     <accessibility key="accessibilityConfiguration">
                         <accessibilityTraits key="traits" notEnabled="YES"/>
                         <bool key="isElement" value="NO"/>
@@ -226,13 +231,16 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A B C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBl-QO-rgC" customClass="AutoFontSizeAdjustingLabel" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="175.5" y="290.5" width="24.5" height="11"/>
+                    <rect key="frame" x="175.5" y="246" width="24.5" height="11"/>
                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLy-90-g1a" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="230.5" y="261.5" width="30" height="38"/>
+                    <rect key="frame" x="257" y="195" width="82.5" height="82.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="pLy-90-g1a" secondAttribute="height" multiplier="1:1" id="WPC-nq-HpR"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                     <state key="normal">
                         <color key="titleColor" red="0.45882352939999999" green="0.60392156860000001" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -257,7 +265,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAF-Vs-nEd" customClass="AutoFontSizeAdjustingLabel" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="235" y="252.5" width="21" height="43"/>
+                    <rect key="frame" x="287.5" y="208" width="21" height="43"/>
                     <accessibility key="accessibilityConfiguration">
                         <accessibilityTraits key="traits" notEnabled="YES"/>
                         <bool key="isElement" value="NO"/>
@@ -267,13 +275,16 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D E F" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53u-Uv-OmD" customClass="AutoFontSizeAdjustingLabel" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="234" y="290.5" width="23" height="11"/>
+                    <rect key="frame" x="286.5" y="246" width="23" height="11"/>
                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RR4-5o-pli" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="114.5" y="314.5" width="30" height="38"/>
+                    <rect key="frame" x="36" y="292.5" width="82.5" height="82.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="RR4-5o-pli" secondAttribute="height" multiplier="1:1" id="E6x-YP-Sc0"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                     <state key="normal">
                         <color key="titleColor" red="0.45882352939999999" green="0.60392156860000001" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -298,7 +309,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Fu-2Z-dAl" customClass="AutoFontSizeAdjustingLabel" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="119" y="305.5" width="21.5" height="43"/>
+                    <rect key="frame" x="66.5" y="305.5" width="21.5" height="43"/>
                     <accessibility key="accessibilityConfiguration">
                         <accessibilityTraits key="traits" notEnabled="YES"/>
                         <bool key="isElement" value="NO"/>
@@ -308,13 +319,16 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="G H I" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3a-gj-Wpy" customClass="AutoFontSizeAdjustingLabel" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="118.5" y="343.5" width="22" height="11"/>
+                    <rect key="frame" x="66" y="343.5" width="22" height="11"/>
                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9Z-3u-ohd" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="172.5" y="314.5" width="30" height="38"/>
+                    <rect key="frame" x="146.5" y="292.5" width="82.5" height="82.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="C9Z-3u-ohd" secondAttribute="height" multiplier="1:1" id="kGS-rX-snT"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                     <state key="normal">
                         <color key="titleColor" red="0.45882352939999999" green="0.60392156860000001" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -355,7 +369,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDx-aD-wJK" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="230.5" y="314.5" width="30" height="38"/>
+                    <rect key="frame" x="257" y="292.5" width="82.5" height="82.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="WDx-aD-wJK" secondAttribute="height" multiplier="1:1" id="n01-nO-Tyh"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                     <state key="normal">
                         <color key="titleColor" red="0.45882352939999999" green="0.60392156860000001" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -380,7 +397,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ug-T1-y1g" customClass="AutoFontSizeAdjustingLabel" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="235" y="305.5" width="21.5" height="43"/>
+                    <rect key="frame" x="287.5" y="305.5" width="21.5" height="43"/>
                     <accessibility key="accessibilityConfiguration">
                         <accessibilityTraits key="traits" notEnabled="YES"/>
                         <bool key="isElement" value="NO"/>
@@ -390,13 +407,16 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M N O" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdO-rL-TtX" customClass="AutoFontSizeAdjustingLabel" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="232" y="343.5" width="27.5" height="11"/>
+                    <rect key="frame" x="284.5" y="343.5" width="27.5" height="11"/>
                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RA8-jd-dag" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="114.5" y="367.5" width="30" height="38"/>
+                    <rect key="frame" x="36" y="390" width="82.5" height="82.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="RA8-jd-dag" secondAttribute="height" multiplier="1:1" id="jbU-iC-C6Z"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                     <state key="normal">
                         <color key="titleColor" red="0.45882352939999999" green="0.60392156860000001" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -421,7 +441,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Pj-g6-6vn" customClass="AutoFontSizeAdjustingLabel" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="120" y="358.5" width="19.5" height="43"/>
+                    <rect key="frame" x="67.5" y="403" width="19.5" height="43"/>
                     <accessibility key="accessibilityConfiguration">
                         <accessibilityTraits key="traits" notEnabled="YES"/>
                         <bool key="isElement" value="NO"/>
@@ -431,13 +451,16 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P Q R S" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWP-22-wlq" customClass="AutoFontSizeAdjustingLabel" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="113" y="396.5" width="33.5" height="11"/>
+                    <rect key="frame" x="60.5" y="441" width="33.5" height="11"/>
                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbJ-Y8-MMf" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="172.5" y="367.5" width="30" height="38"/>
+                    <rect key="frame" x="146.5" y="390" width="82.5" height="82.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="PbJ-Y8-MMf" secondAttribute="height" multiplier="1:1" id="DHl-p2-frb"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                     <state key="normal">
                         <color key="titleColor" red="0.45882352939999999" green="0.60392156860000001" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -462,7 +485,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2J4-PN-Aag" customClass="AutoFontSizeAdjustingLabel" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="177" y="358.5" width="21.5" height="43"/>
+                    <rect key="frame" x="177" y="403" width="21.5" height="43"/>
                     <accessibility key="accessibilityConfiguration">
                         <accessibilityTraits key="traits" notEnabled="YES"/>
                         <bool key="isElement" value="NO"/>
@@ -472,13 +495,16 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T U V" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NJ-Yf-PF5" customClass="AutoFontSizeAdjustingLabel" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="175.5" y="396.5" width="24.5" height="11"/>
+                    <rect key="frame" x="175.5" y="441" width="24.5" height="11"/>
                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUD-XB-0CR" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="230.5" y="367.5" width="30" height="38"/>
+                    <rect key="frame" x="257" y="390" width="82.5" height="82.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="EUD-XB-0CR" secondAttribute="height" multiplier="1:1" id="qMN-gh-anN"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                     <state key="normal">
                         <color key="titleColor" red="0.45882352939999999" green="0.60392156860000001" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -503,7 +529,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zB5-RZ-lYF" customClass="AutoFontSizeAdjustingLabel" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="235" y="358.5" width="21.5" height="43"/>
+                    <rect key="frame" x="287.5" y="403" width="21.5" height="43"/>
                     <accessibility key="accessibilityConfiguration">
                         <accessibilityTraits key="traits" notEnabled="YES"/>
                         <bool key="isElement" value="NO"/>
@@ -513,13 +539,16 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W X Y Z" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xd-ep-Zjd" customClass="AutoFontSizeAdjustingLabel" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="228" y="396.5" width="35.5" height="11"/>
+                    <rect key="frame" x="280.5" y="441" width="35.5" height="11"/>
                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CR-0R-0Nr" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="172.5" y="420.5" width="30" height="38"/>
+                    <rect key="frame" x="146.5" y="487.5" width="82.5" height="82.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="0CR-0R-0Nr" secondAttribute="height" multiplier="1:1" id="y0m-cS-i1e"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                     <state key="normal">
                         <color key="titleColor" red="0.45882352939999999" green="0.60392156860000001" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -544,7 +573,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H78-kl-y6L" customClass="AutoFontSizeAdjustingButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="218" y="607" width="55" height="44"/>
+                    <rect key="frame" x="270.5" y="607" width="55" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="yOX-U0-bfz"/>
                     </constraints>
@@ -561,7 +590,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ph-dj-v7R" userLabel="TouchID Button" customClass="AutoFontSizeAdjustingButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="93.5" y="607" width="72" height="44"/>
+                    <rect key="frame" x="41" y="607" width="72" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="XzZ-yU-n56"/>
                     </constraints>
@@ -588,7 +617,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ve-00-VpB" customClass="AutoFontSizeAdjustingLabel" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="177" y="419" width="21.5" height="43"/>
+                    <rect key="frame" x="177" y="508" width="21.5" height="43"/>
                     <accessibility key="accessibilityConfiguration">
                         <accessibilityTraits key="traits" notEnabled="YES"/>
                         <bool key="isElement" value="NO"/>
@@ -621,6 +650,7 @@
                 <constraint firstItem="RA8-jd-dag" firstAttribute="top" secondItem="PbJ-Y8-MMf" secondAttribute="top" id="El6-jF-AOZ"/>
                 <constraint firstItem="RR4-5o-pli" firstAttribute="centerX" secondItem="cuq-ue-Jyj" secondAttribute="centerX" id="EsN-cG-KcQ"/>
                 <constraint firstItem="8xd-ep-Zjd" firstAttribute="centerY" secondItem="EUD-XB-0CR" secondAttribute="centerY" constant="15.5" id="GhF-KZ-zSJ"/>
+                <constraint firstItem="EUD-XB-0CR" firstAttribute="width" secondItem="0CR-0R-0Nr" secondAttribute="width" id="HFW-di-HBE"/>
                 <constraint firstItem="53u-Uv-OmD" firstAttribute="centerX" secondItem="pLy-90-g1a" secondAttribute="centerX" id="L4U-K5-raq"/>
                 <constraint firstItem="zB5-RZ-lYF" firstAttribute="centerX" secondItem="EUD-XB-0CR" secondAttribute="centerX" id="LeJ-ef-esi"/>
                 <constraint firstItem="9NJ-Yf-PF5" firstAttribute="centerX" secondItem="PbJ-Y8-MMf" secondAttribute="centerX" id="LtH-up-W72"/>
@@ -641,11 +671,16 @@
                 <constraint firstItem="574-79-ptz" firstAttribute="centerY" secondItem="C9Z-3u-ohd" secondAttribute="centerY" constant="15.5" id="VxX-oc-qTP"/>
                 <constraint firstItem="zB5-RZ-lYF" firstAttribute="centerY" secondItem="EUD-XB-0CR" secondAttribute="centerY" constant="-6.5" id="WV5-Jw-kXY"/>
                 <constraint firstItem="HcN-lo-9Jb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Wqo-IM-yCU"/>
+                <constraint firstItem="RA8-jd-dag" firstAttribute="width" secondItem="PbJ-Y8-MMf" secondAttribute="width" id="X5b-rj-nQU"/>
                 <constraint firstItem="5Fu-2Z-dAl" firstAttribute="centerX" secondItem="RR4-5o-pli" secondAttribute="centerX" id="XJw-Ek-QWh"/>
                 <constraint firstItem="pLy-90-g1a" firstAttribute="top" secondItem="CGh-ph-49t" secondAttribute="top" id="XXL-dB-dNT"/>
+                <constraint firstItem="cuq-ue-Jyj" firstAttribute="width" secondItem="CGh-ph-49t" secondAttribute="width" id="Y3U-tk-9YZ"/>
                 <constraint firstItem="wWP-22-wlq" firstAttribute="centerX" secondItem="RA8-jd-dag" secondAttribute="centerX" id="Z4O-CO-vzw"/>
                 <constraint firstItem="s3a-gj-Wpy" firstAttribute="centerY" secondItem="RR4-5o-pli" secondAttribute="centerY" constant="15.5" id="ZEv-lC-Ley"/>
+                <constraint firstItem="PbJ-Y8-MMf" firstAttribute="width" secondItem="EUD-XB-0CR" secondAttribute="width" id="aOD-id-93V"/>
                 <constraint firstAttribute="bottom" secondItem="H78-kl-y6L" secondAttribute="bottom" constant="16" id="aT9-jV-6wI"/>
+                <constraint firstItem="pLy-90-g1a" firstAttribute="width" secondItem="RR4-5o-pli" secondAttribute="width" id="acX-1N-sDV"/>
+                <constraint firstItem="CGh-ph-49t" firstAttribute="width" secondItem="pLy-90-g1a" secondAttribute="width" id="azp-jg-HfM"/>
                 <constraint firstItem="EUD-XB-0CR" firstAttribute="centerX" secondItem="WDx-aD-wJK" secondAttribute="centerX" id="bc8-gr-atX"/>
                 <constraint firstItem="YdO-rL-TtX" firstAttribute="centerX" secondItem="WDx-aD-wJK" secondAttribute="centerX" id="bmK-Rt-iFZ"/>
                 <constraint firstItem="5Pj-g6-6vn" firstAttribute="centerY" secondItem="RA8-jd-dag" secondAttribute="centerY" constant="-6.5" id="cGk-g8-rjA"/>
@@ -665,6 +700,10 @@
                 <constraint firstItem="F0F-xg-rNp" firstAttribute="centerY" secondItem="C9Z-3u-ohd" secondAttribute="centerY" constant="-6.5" id="mtO-he-Lg2"/>
                 <constraint firstItem="rBl-QO-rgC" firstAttribute="centerX" secondItem="CGh-ph-49t" secondAttribute="centerX" id="n89-T9-frk"/>
                 <constraint firstItem="CGh-ph-49t" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="nWf-L4-Xsa"/>
+                <constraint firstItem="WDx-aD-wJK" firstAttribute="width" secondItem="RA8-jd-dag" secondAttribute="width" id="pgf-HU-2o6"/>
+                <constraint firstItem="cuq-ue-Jyj" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.22" id="sUq-8d-ZXT"/>
+                <constraint firstItem="C9Z-3u-ohd" firstAttribute="width" secondItem="WDx-aD-wJK" secondAttribute="width" id="tUy-hA-nBW"/>
+                <constraint firstItem="RR4-5o-pli" firstAttribute="width" secondItem="C9Z-3u-ohd" secondAttribute="width" id="tma-ii-uo5"/>
                 <constraint firstItem="2Ug-T1-y1g" firstAttribute="centerX" secondItem="WDx-aD-wJK" secondAttribute="centerX" id="voc-Sw-oHg"/>
                 <constraint firstItem="WDx-aD-wJK" firstAttribute="top" secondItem="C9Z-3u-ohd" secondAttribute="top" id="xuJ-4l-etR"/>
                 <constraint firstItem="C9Z-3u-ohd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="y7P-FW-V10"/>

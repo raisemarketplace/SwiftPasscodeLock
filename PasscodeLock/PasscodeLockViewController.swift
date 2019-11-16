@@ -36,39 +36,6 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
     @IBOutlet open weak var touchIDButton: UIButton!
     @IBOutlet open weak var placeholdersX: NSLayoutConstraint!
     
-    @IBOutlet open weak var vSpaceLabelAndDots: NSLayoutConstraint!
-    
-    @IBOutlet open weak var hDotSpace1And2: NSLayoutConstraint!
-    @IBOutlet open weak var hDotSpace2And3: NSLayoutConstraint!
-    @IBOutlet open weak var hDotSpace3And4: NSLayoutConstraint!
-    
-    @IBOutlet open weak var vSpace2ANd5: NSLayoutConstraint!
-    @IBOutlet open weak var vSpace5And8: NSLayoutConstraint!
-    @IBOutlet open weak var vSpace8And0: NSLayoutConstraint!
-    @IBOutlet open weak var hSpace1And2: NSLayoutConstraint!
-    @IBOutlet open weak var hSpace2And3: NSLayoutConstraint!
-    
-    @IBOutlet open weak var v2: NSLayoutConstraint!
-    @IBOutlet open weak var v3: NSLayoutConstraint!
-    @IBOutlet open weak var v4: NSLayoutConstraint!
-    @IBOutlet open weak var v5: NSLayoutConstraint!
-    @IBOutlet open weak var v6: NSLayoutConstraint!
-    @IBOutlet open weak var v7: NSLayoutConstraint!
-    @IBOutlet open weak var v8: NSLayoutConstraint!
-    @IBOutlet open weak var v9: NSLayoutConstraint!
-    
-    @IBOutlet open weak var vAbc: NSLayoutConstraint!
-    @IBOutlet open weak var vDef: NSLayoutConstraint!
-    @IBOutlet open weak var vGhi: NSLayoutConstraint!
-    @IBOutlet open weak var vJkl: NSLayoutConstraint!
-    @IBOutlet open weak var vMno: NSLayoutConstraint!
-    @IBOutlet open weak var vPqrs: NSLayoutConstraint!
-    @IBOutlet open weak var vTuv: NSLayoutConstraint!
-    @IBOutlet open weak var vWxyz: NSLayoutConstraint!
-    
-    @IBOutlet open weak var touchIDButtonBottom: NSLayoutConstraint!
-    @IBOutlet open weak var deleteButtonBottom: NSLayoutConstraint!
-    
     open var getPasscodeBlock: ((_ passcode: [Int]) -> Void)?
     open var successCallback: ((_ lock: PasscodeLockType) -> Void)?
     open var dismissCompletionCallback: (()->Void)?
@@ -117,7 +84,6 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-        updateConstraint()
         updatePasscodeView()
         deleteCancelButton?.setTitle("Cancel", for: .normal)
         
@@ -131,44 +97,6 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
         
             authenticateWithBiometrics()
         }
-    }
-    
-    private func updateConstraint() {
-        let ratio = UIScreen.main.bounds.height / 667
-        
-        vSpaceLabelAndDots.constant = vSpaceLabelAndDots.constant * ratio
-        
-        hDotSpace1And2.constant = hDotSpace1And2.constant * ratio
-        hDotSpace2And3.constant = hDotSpace2And3.constant * ratio
-        hDotSpace3And4.constant = hDotSpace3And4.constant * ratio
-        
-        vSpace2ANd5.constant = vSpace2ANd5.constant * ratio
-        vSpace5And8.constant = vSpace5And8.constant * ratio
-        vSpace8And0.constant = vSpace8And0.constant * ratio
-        
-        hSpace1And2.constant = hSpace1And2.constant * ratio
-        hSpace2And3.constant = hSpace2And3.constant * ratio
-        
-        v2.constant = v2.constant * ratio
-        v3.constant = v3.constant * ratio
-        v4.constant = v4.constant * ratio
-        v5.constant = v5.constant * ratio
-        v6.constant = v6.constant * ratio
-        v7.constant = v7.constant * ratio
-        v8.constant = v8.constant * ratio
-        v9.constant = v9.constant * ratio
-        
-        vAbc.constant = vAbc.constant * ratio
-        vDef.constant = vDef.constant * ratio
-        vGhi.constant = vGhi.constant * ratio
-        vJkl.constant = vJkl.constant * ratio
-        vMno.constant = vMno.constant * ratio
-        vPqrs.constant = vPqrs.constant * ratio
-        vTuv.constant = vTuv.constant * ratio
-        vWxyz.constant = vWxyz.constant * ratio
-        
-        touchIDButtonBottom.constant = touchIDButtonBottom.constant * ratio
-        deleteButtonBottom.constant = deleteButtonBottom.constant * ratio
     }
     
     internal func updatePasscodeView() {

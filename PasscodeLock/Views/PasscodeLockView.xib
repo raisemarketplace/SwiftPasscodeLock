@@ -10,38 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PasscodeLockViewController" customModule="PasscodeLock" customModuleProvider="target">
             <connections>
-                <outlet property="deleteButtonBottom" destination="aT9-jV-6wI" id="QWC-oW-xBz"/>
                 <outlet property="deleteCancelButton" destination="H78-kl-y6L" id="pyp-5n-6KC"/>
-                <outlet property="hDotSpace1And2" destination="dde-Fn-Mzf" id="Yk2-1D-65l"/>
-                <outlet property="hDotSpace2And3" destination="33P-aQ-rnf" id="LXQ-bo-64E"/>
-                <outlet property="hDotSpace3And4" destination="LwK-gY-EaT" id="Pbj-9v-xO9"/>
-                <outlet property="hSpace1And2" destination="6wf-5d-CCI" id="cah-ca-xER"/>
-                <outlet property="hSpace2And3" destination="6jk-5n-EC0" id="pGh-v7-p1I"/>
                 <outlet property="infoButton" destination="JJM-nq-RPC" id="Odu-TX-Asr"/>
-                <outlet property="placeholdersX" destination="Wqo-IM-yCU" id="8td-lh-XMA"/>
+                <outlet property="placeholdersX" destination="Wqo-IM-yCU" id="YDU-Xs-atg"/>
                 <outlet property="titleLabel" destination="1wK-Ol-7mm" id="FOM-sv-dOO"/>
                 <outlet property="touchIDButton" destination="0Ph-dj-v7R" id="ifL-gW-Ttr"/>
-                <outlet property="touchIDButtonBottom" destination="BIJ-v9-DKU" id="uzG-y6-69s"/>
-                <outlet property="v2" destination="MHP-4b-BFW" id="yuz-CU-fv8"/>
-                <outlet property="v3" destination="d16-2n-1UN" id="sGz-9A-uod"/>
-                <outlet property="v4" destination="4rV-aZ-ZSl" id="aMi-11-0eY"/>
-                <outlet property="v5" destination="mtO-he-Lg2" id="PWR-os-dEP"/>
-                <outlet property="v6" destination="Ohi-8k-uKy" id="pIn-wM-MnE"/>
-                <outlet property="v7" destination="cGk-g8-rjA" id="82X-04-cQB"/>
-                <outlet property="v8" destination="mL7-q4-V8z" id="4q7-gx-Hto"/>
-                <outlet property="v9" destination="WV5-Jw-kXY" id="p7q-01-kar"/>
-                <outlet property="vAbc" destination="dgZ-2c-LNS" id="uy2-FT-Q4R"/>
-                <outlet property="vDef" destination="iVl-gj-Cw6" id="hdG-jc-u3t"/>
-                <outlet property="vGhi" destination="ZEv-lC-Ley" id="qlF-Jf-CtZ"/>
-                <outlet property="vJkl" destination="VxX-oc-qTP" id="Ez4-0Q-UeZ"/>
-                <outlet property="vMno" destination="AlU-2G-AcT" id="Asb-V1-Ao4"/>
-                <outlet property="vPqrs" destination="eRp-Tt-JdN" id="NoQ-WM-BDR"/>
-                <outlet property="vSpace2ANd5" destination="diZ-Kj-1hU" id="BWQ-Ru-pLj"/>
-                <outlet property="vSpace5And8" destination="Vo4-YP-n8O" id="Q5L-ML-47W"/>
-                <outlet property="vSpace8And0" destination="Sah-YV-A2O" id="8Eh-QP-VMk"/>
-                <outlet property="vSpaceLabelAndDots" destination="5xi-ON-eDG" id="Eif-Aa-3eW"/>
-                <outlet property="vTuv" destination="DUf-sv-Jbw" id="Pwg-wt-Gpe"/>
-                <outlet property="vWxyz" destination="GhF-KZ-zSJ" id="gTa-e0-nUh"/>
                 <outlet property="view" destination="iN0-l3-epB" id="4dc-hJ-geg"/>
                 <outletCollection property="placeholders" destination="w14-Kb-Jnf" collectionClass="NSMutableArray" id="OYC-Bu-Hqb"/>
                 <outletCollection property="placeholders" destination="OSf-H5-f20" collectionClass="NSMutableArray" id="obm-Mr-bfV"/>

@@ -21,7 +21,6 @@ open class PasscodeSignButton: UIButton {
         }
     }
     
-    @IBInspectable
     open var borderRadius: CGFloat {
         get {
             return frame.width / 2

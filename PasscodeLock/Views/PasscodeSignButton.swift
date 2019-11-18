@@ -28,6 +28,11 @@ open class PasscodeSignButton: UIButton {
         }
     }
     
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        setupView()
+    }
+    
     open override var intrinsicContentSize : CGSize {
         return CGSize(width: frame.size.width, height: frame.size.width)
     }
